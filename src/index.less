@@ -1,0 +1,98 @@
+@color-1: #f4f1ea;
+@color-2: #48b4a5;
+@color-3: #5089C6;
+@color-4: #255a62;
+@color-5: #15222a;
+
+:root {
+    --color-1: @color-1;
+    --color-2: @color-2;
+    --color-3: @color-3;
+    --color-4: @color-4;
+    --color-5: @color-5;
+    --color-1-dark-10: shade(@color-1, 10%);
+    --color-1-dark-40: shade(@color-1, 40%);
+    --color-1-dark-25: shade(@color-1, 25%);
+    --color-3-light: lighten(@color-3, 10%);
+    --color-3-dark: shade(@color-3, 10%);
+    --color-5-light: lighten(@color-5, 50%);
+    --color-5-dark: shade(@color-5, 50%);
+}
+
+body {
+    width: 1400px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: Quicksand, sans-serif;
+}
+
+.icon {
+    display: inline-flex;
+
+    & > svg {
+        transition: fill 0.3s ease;
+    }
+}
+
+.ant-rate-star-first, .ant-rate-star-second  {
+    color: var(--color-1-dark-25);
+}
+
+.ant-menu-item a {
+    color: var(--color-1);
+
+    &:hover {
+        color: var(--color-2);
+    }
+
+    &::before {
+        content: unset;
+    }
+}
+
+.ant-menu-vertical {
+    border: unset;
+
+    &:not(.ant-menu-inline-collapsed) {
+        .ant-menu-item {
+            &:not(:first-of-type):not(:last-of-type) {
+                cursor: unset;
+            }
+        }
+    }
+}
+
+.ant-menu-inline-collapsed-tooltip {
+    max-width: unset;
+
+    .ant-tooltip-inner {
+        word-wrap: unset;
+    }
+}
+
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item {
+    padding: 0 calc(50% - 32px / 2);
+    height: unset;
+    display: flex;
+    align-items: center;
+
+    &.ant-menu-item-active .ant-menu-item-icon {
+        color: var(--color-2) !important;
+    }
+}
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item .ant-menu-item-icon {
+    font-size: 32px;
+}
+
+.ant-tooltip-inner {
+    padding: 20px;
+    div[class*='CardWrapper'], div[class*='ReferenceWrapper'] {
+        margin-top: unset;
+    }
+}
+
+#root.collapsed {
+    canvas {
+        margin-left: unset !important;
+    }
+}
